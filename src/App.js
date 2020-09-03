@@ -6,7 +6,6 @@ import ToDoForm from './components/TodoForm';
 
 import './components/Todo.css';
 
-
 class App extends React.Component {
   constructor() {
     super();
@@ -42,7 +41,8 @@ class App extends React.Component {
   render() { 
     return (
       <div>
-        <h2>Welcome to your Todo App!</h2>
+        <h1>Welcome to your Todo App!</h1>
+        <h2>Thing to Do...</h2>
           <ToDoList 
             taskData = { this.state.todos } toggleComplete = { this.toggleComplete }/>
           <ToDoForm 

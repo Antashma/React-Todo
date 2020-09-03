@@ -31,12 +31,12 @@ class ToDoForm extends React.Component {
                     name='task'
                     value={this.state.newTask}
                     onChange={this.handleChanges} 
-                 />
+                 />&nbsp;
                 <button 
                     disabled={this.state.newTask === '' ? true : false} 
                     type='submit'>
                         Add Task
-                </button>
+                </button>&nbsp;
                 <button 
                     type= 'button'
                     onClick= {(e) => this.props.clearCompleted()}>
