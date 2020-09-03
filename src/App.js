@@ -2,6 +2,8 @@ import React from 'react';
 //❣SG - get sample todos from todo.js
 import { data } from './components/todosData';
 import ToDo from './components/Todo';
+import ToDoForm from './components/TodoForm';
+
 
 class App extends React.Component {
     constructor() {
@@ -20,6 +22,7 @@ class App extends React.Component {
           {this.state.todos.map(item => 
             <ToDo key={ item.id } taskName={ item.task } />
           )}
+          <ToDoForm />
         </div>
       </div>
     );

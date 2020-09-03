@@ -5,7 +5,7 @@ class ToDo extends React.Component {
         super(props);
     }
     render() {
-        return <p>🔅 {this.props.taskName}</p>
+        return <p>{this.props.taskName}</p>
     };
 }
 export default ToDo;
