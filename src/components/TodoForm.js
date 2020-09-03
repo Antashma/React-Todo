@@ -21,14 +21,23 @@ class ToDoForm extends React.Component {
             id: Date.now(),
             completed:false,
         });
-
+        this.setState({newTask: ''});
     }
 
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <input type='text' name='task' value={this.state.newTask} onChange={this.handleChanges} />
-                <button type='submit'>Add Task</button>
+                <input 
+                    type='text' 
+                    name='task'
+                    value={this.state.newTask}
+                    onChange={this.handleChanges} 
+                 />
+                <button 
+                    disabled={this.state.newTask === '' ? true : false} 
+                    type='submit'>
+                        Add Task
+                </button>
                 <button type='button'>Clear Completed</button>
             </form>
         )
