@@ -1,5 +1,6 @@
 .task {
     background: palegreen;
+    color: darkslategrey;
     padding: 10px;
     max-width: 150px;
     font-weight: bold;

@@ -33,6 +33,12 @@ class App extends React.Component {
     )})//map parens, setState object new object start, setState parens
   };//toggleComplete block
 
+  clearCompleted = () => {
+    /* return only uncompleted tasks */
+    const uncompleteTasks = this.state.todos.filter(item => !item.completed);
+    this.setState({todos: uncompleteTasks});
+  }
+
   render() { 
     return (
       <div>
@@ -44,7 +50,9 @@ class App extends React.Component {
               key={ item.id }
               toggleComplete={ this.toggleComplete } taskData={ item } />
             })}
-          <ToDoForm addTask={ this.addTask }/>
+          <ToDoForm 
+            addTask={ this.addTask } 
+            clearCompleted = { this.clearCompleted }/>
         </div>
       </div>
     )

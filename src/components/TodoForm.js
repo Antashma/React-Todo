@@ -37,7 +37,11 @@ class ToDoForm extends React.Component {
                     type='submit'>
                         Add Task
                 </button>
-                <button type='button'>Clear Completed</button>
+                <button 
+                    type= 'button'
+                    onClick= {(e) => this.props.clearCompleted()}>
+                        Clear Completed
+                </button>
             </form>
         )
     }
