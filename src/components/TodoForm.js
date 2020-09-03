@@ -2,8 +2,8 @@ import React from 'react';
 import ToDo from './Todo';
 
 class ToDoForm extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             newTask: '',
         };
@@ -16,12 +16,17 @@ class ToDoForm extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        
+        this.props.addTask({
+            task: this.state.newTask,
+            id: Date.now(),
+            completed:false,
+        });
+
     }
 
     render() {
         return (
-            <form>
+            <form onSubmit={this.handleSubmit}>
                 <input type='text' name='task' value={this.state.newTask} onChange={this.handleChanges} />
                 <button type='submit'>Add Task</button>
                 <button type='button'>Clear Completed</button>

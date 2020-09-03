@@ -6,12 +6,16 @@ import ToDoForm from './components/TodoForm';
 
 
 class App extends React.Component {
-    constructor() {
-      super();
-      this.state = {
-        todos: data,
-      }
+  constructor() {
+    super();
+    this.state = {
+      todos: data,
     }
+  }
+
+  addTask = (newTask) => {
+    this.setState({todos: [...this.state.todos, newTask]});
+  }
 
   render() { 
     console.log('sg: app.js : this.state.todos = ', this.state.todos);
@@ -22,7 +26,7 @@ class App extends React.Component {
           {this.state.todos.map(item => 
             <ToDo key={ item.id } taskName={ item.task } />
           )}
-          <ToDoForm />
+          <ToDoForm addTask = { this.addTask }/>
         </div>
       </div>
     );
