@@ -1,7 +1,7 @@
 import React from 'react';
 //❣SG - get sample todos from todo.js
 import { data } from './components/todosData';
-import ToDo from './components/Todo';
+import ToDoList from './components/TodoList';
 import ToDoForm from './components/TodoForm';
 
 import './components/Todo.css';
@@ -43,17 +43,11 @@ class App extends React.Component {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        <div>
-          {this.state.todos.map(item => {
-            return console.log('sg: app.js: map item value',item),
-            <ToDo 
-              key={ item.id }
-              toggleComplete={ this.toggleComplete } taskData={ item } />
-            })}
+          <ToDoList 
+            taskData = { this.state.todos } toggleComplete = { this.toggleComplete }/>
           <ToDoForm 
             addTask={ this.addTask } 
             clearCompleted = { this.clearCompleted }/>
-        </div>
       </div>
     )
   }
