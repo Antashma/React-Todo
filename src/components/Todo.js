@@ -1,12 +1,11 @@
-export const data = [
-    {
-      task: 'oraganize closet',
-      id: 1528817077286,
-      completed: false
-    },
-    {
-      task: 'bake veggies',
-      id: 1528817084358,
-      completed: false
+import React from 'react';
+
+class ToDo extends React.Component {
+    constructor(props) {
+        super(props);
     }
-  ];
+    render() {
+        return <p>🔅 {this.props.taskName}</p>
+    };
+}
+export default ToDo;
