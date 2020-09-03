@@ -1,0 +1,13 @@
+.task {
+    background: palegreen;
+    padding: 10px;
+    max-width: 150px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.task.completed {
+    background: whitesmoke;
+    color: gray;
+    text-decoration: line-through;
+}

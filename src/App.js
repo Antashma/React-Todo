@@ -4,6 +4,8 @@ import { data } from './components/todosData';
 import ToDo from './components/Todo';
 import ToDoForm from './components/TodoForm';
 
+import './components/Todo.css';
+
 
 class App extends React.Component {
   constructor() {
@@ -17,19 +19,35 @@ class App extends React.Component {
     this.setState({todos: [...this.state.todos, newTask]});
   }
 
+  toggleComplete = (taskID) => {
+    this.setState({todos: this.state.todos.map(
+      item => {
+        if (taskID === item.id) {
+          return {
+            ...item,
+            completed: !item.completed,
+          }//if return block
+        } //if block
+        return item;
+      }//map block  
+    )})//map parens, setState object new object start, setState parens
+  };//toggleComplete block
+
   render() { 
-    console.log('sg: app.js : this.state.todos = ', this.state.todos);
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
         <div>
-          {this.state.todos.map(item => 
-            <ToDo key={ item.id } taskName={ item.task } />
-          )}
-          <ToDoForm addTask = { this.addTask }/>
+          {this.state.todos.map(item => {
+            return console.log('sg: app.js: map item value',item),
+            <ToDo 
+              key={ item.id }
+              toggleComplete={ this.toggleComplete } taskData={ item } />
+            })}
+          <ToDoForm addTask={ this.addTask }/>
         </div>
       </div>
-    );
+    )
   }
 }
 

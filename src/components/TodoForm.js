@@ -1,5 +1,4 @@
 import React from 'react';
-import ToDo from './Todo';
 
 class ToDoForm extends React.Component {
     constructor(props) {
