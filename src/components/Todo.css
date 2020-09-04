@@ -56,28 +56,87 @@ html {
 
 body {
     font-family: 'Roboto', sans-serif;
+    font-size: 1.8rem;
+    line-height: 150%;
+    background: floralwhite;
 }
 
-h1, h2, h3 {
-    margin: 20px;
-    font-family:'Homemade Apple', cursive;
-    font-size: 2.5rem;
+h1, h2, h3, .fancyText, .task {
+    font-family: 'Homemade Apple', cursive;
+    font-weight: bold;
     
 }
 
+h1 {
+    font-size: 2.5rem;
+}
 
+h2 {
+    font-size: 2rem;
+}
+
+li {   
+    margin-left: 50px;
+    list-style-type: decimal ;
+}
+
+.app-container {
+    margin: 20px;
+}
+
+.todo-list-container {
+    padding:15px;
+/*     border-bottom: dotted 1px silver;
+ */    min-height: 100px;
+}
 
 .task {
-    background: palegreen;
+    margin: 10px 0;
     color: darkslategrey;
-    padding: 10px;
-    max-width: 150px;
-    font-weight: bold;
+    border-bottom: 1px solid silver;
+    padding: 15px;
+    max-width: 100%;
     cursor: pointer;
 }
 
+.task::before {
+    content: '♥';
+    margin-right: 15px;
+
+}
+
 .task.completed {
-    background: whitesmoke;
-    color: gray;
-    text-decoration: line-through;
+    color: silver;
+}
+
+.task.completed::before {
+    content:'✔';
+    margin-right: 15px;
+
+}
+
+button, input {
+    padding:15px;
+    box-shadow: 1px 1px 3px silver;
+    border: 1px solid silver;
+    background: transparent;
+}
+
+.howto-container {
+    margin-top: 20px
+}
+
+form {
+    margin-top:20px;
+    width: 100%;
+    font-family: 'Roboto';
+}
+
+button[type='submit'] {
+    font-weight: bold;
+}
+
+button[disabled] {
+    font-weight: normal;
+    box-shadow: none;
 }

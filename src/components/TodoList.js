@@ -9,7 +9,7 @@ class ToDoList extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='todo-list-container'>
                 {this.props.taskData.map(item => 
                 <ToDo 
                     key={ item.id }

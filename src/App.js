@@ -40,14 +40,25 @@ class App extends React.Component {
 
   render() { 
     return (
-      <div>
-        <h1>Welcome to your Todo App!</h1>
-        <h2>Thing to Do...</h2>
-          <ToDoList 
-            taskData = { this.state.todos } toggleComplete = { this.toggleComplete }/>
-          <ToDoForm 
-            addTask={ this.addTask } 
-            clearCompleted = { this.clearCompleted }/>
+      <div className='app-container'>
+        <h1>things to do...</h1>
+        <ToDoForm 
+          addTask={ this.addTask } 
+          clearCompleted = { this.clearCompleted }/>
+        <ToDoList 
+          taskData = { this.state.todos } toggleComplete = { this.toggleComplete }/>
+        <section className='howto-container'>
+          <h2>how to use</h2>
+          <p>Welcome to your Todo App!</p>
+          <ul>
+            <li>Type and enter new tasks with the small form at the top of this page</li>
+            <li>View your new tasks underneathe</li>
+            <li>Complete a task by clicking on it (or uncomplete by clicking again)</li>
+            <li>Clean up your tasks by removing the ones you completed by pressing the 'Clear Completed' button.</li>
+          </ul>
+          <p className='fancyText'>happy tasking!</p>
+        </section>
+   
       </div>
     )
   }
