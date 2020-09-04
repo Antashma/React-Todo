@@ -1,12 +1,12 @@
 export const data = [
     {
-      task: 'oraganize closet',
-      id: 1528817077286,
+      task: 'add a task',
+      id: 1,
       completed: false
     },
     {
-      task: 'cook veggies',
-      id: 1528817084358,
+      task: 'complete a task',
+      id: 2,
       completed: false
     }
   ];
