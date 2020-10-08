@@ -3,6 +3,7 @@ import React from 'react';
 import { data } from './components/todosData';
 import ToDoList from './components/TodoList';
 import ToDoForm from './components/TodoForm';
+import NoTodo from './components/NoTodo';
 
 import './components/Todo.css';
 
@@ -45,8 +46,12 @@ class App extends React.Component {
         <ToDoForm 
           addTask={ this.addTask } 
           clearCompleted = { this.clearCompleted }/>
-        <ToDoList 
+        {this.state.todos.length === 0 
+          ? <NoTodo /> 
+          : <ToDoList 
           taskData = { this.state.todos } toggleComplete = { this.toggleComplete }/>
+        }
+  
         <section className='howto-container'>
           <h2>how to use</h2>
           <p>Welcome to your Todo App!</p>
